@@ -22,6 +22,8 @@ rref_augmented_array = np.array(rref_augmented, dtype=np.float64)
 rank_coeff = sympy_coeff.rank()
 rank_augmented = sympy_augmented.rank()
 num_variables = A.shape[1]
+num_leading = rank_coeff
+num_free = num_variables - rank_coeff
 
 print("-" * 50)
 print("Coefficient Matrix A:")
@@ -36,9 +38,8 @@ print("-" * 50)
 print("RREF of Augmented Matrix:")
 print(rref_augmented_array)
 print("-" * 50)
-print(f"Rank of coefficient matrix: {rank_coeff}")
-print(f"Rank of augmented matrix: {rank_augmented}")
-print(f"Number of variables: {num_variables}")
+print(f"Number of leading variables: {num_leading}")
+print(f"Number of free variables: {num_free}")
 print("-" * 50)
 
 # Check for inconsistency
@@ -49,15 +50,14 @@ for row in range(len(rref_augmented_array)):
         break
 
 if inconsistent:
-    print("The system has NO SOLUTION (Inconsistent)")
+    print("STATUS: INCONSISTENT (No Solution)")
 elif rank_coeff == rank_augmented == num_variables:
-    print("The system has ONE UNIQUE SOLUTION")
-    print("\n✓ CONSISTENT - Unique Solution:")
+    print("STATUS: CONSISTENT (Unique Solution)")
+    print("\nSolution:")
     for i in range(num_variables):
         solution_value = rref_augmented_array[i, -1]
         print(f"  x{i+1} = {solution_value}")
 elif rank_coeff == rank_augmented < num_variables: 
-    num_free = num_variables - rank_coeff
-    print(f"The system has INFINITE SOLUTIONS ({num_free} free variable(s))")
+    print(f"STATUS: CONSISTENT (Infinite Solutions with {num_free} free variable(s))")
 
 print("=" * 50)
