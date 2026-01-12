@@ -2,8 +2,9 @@ import numpy as np
 from sympy import Matrix
 
 # Define the matrix A as a NumPy array
-A = np.array([[4, 7],
-              [2, 6]])
+A = np.array([[1, 5, 0],
+              [2, 4, -1],
+              [0, -2, 3]])
 
 # Convert NumPy array to SymPy Matrix
 sympy_matrix = Matrix(A)
