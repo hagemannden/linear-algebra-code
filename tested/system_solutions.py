@@ -318,10 +318,10 @@ def print_solution(result):
 if __name__ == "__main__":
     # Example: Non-homogeneous with infinite solutions
     A = [
-        [1, -2],
-        [2, -1]
-    ]
-    b = [3, 0]
+        [1, 3, 1, 1],
+         [0, 1, 0.125, 0],
+         [0, 0, 0, 1]]
+    b = [3, -0.25, 3]
     
     print("\n" + "=" * 60)
     print("SOLVING LINEAR SYSTEM")
