@@ -102,10 +102,8 @@ def determinant(matrix):
 
 
 # Define the matrix A as a NumPy array
-A = np.array([[-3, 0, 0, 0],
-              [4, 1, 0, 0],
-              [-1, 4, -4, 0],
-              [0, 3, 2, 3]])
+A = np.array([[1, 4],
+              [5, 2]])
 
 # Compute the determinant (automatically chooses the right method)
 det_result = determinant(A)

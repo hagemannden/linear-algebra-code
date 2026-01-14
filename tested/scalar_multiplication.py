@@ -1,11 +1,11 @@
 import numpy as np
 
 # Define the scalar
-c = 2
+c = 3
 
 # Define the matrix A as a NumPy array
-A = np.array([[1, 1],
-              [-2, 1]])
+A = np.array([[1, -2],
+              [3, 4]])
 
 # Perform scalar multiplication
 result = c * A

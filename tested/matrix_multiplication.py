@@ -2,11 +2,12 @@ import numpy as np
 from sympy import Matrix
 
 # Define the matrix A as a NumPy array
-A = np.array([[1],  
-              [1]])
+A = np.array([[0, -1],
+              [1, 0]])
 
 # Define the matrix B as a NumPy array
-B = np.array([[1, 0]])    
+B = np.array([[0, -1],
+              [1, 0]]) 
 
 # Convert to SymPy matrices 
 symA = Matrix(A)

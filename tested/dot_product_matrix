@@ -1,0 +1,25 @@
+import numpy as np
+
+# Matrix A
+A = np.array([
+    [1, -1, 1, -2],
+    [1, -1, -1, 2]
+])
+
+# Matrix B
+B = np.array([
+    [0, -2, 1, 5],
+    [2, 3, -1, 1],
+    [1, 0, 0, -1],
+    [1, 2, 5, 3]
+])
+
+# Row 2 af A would be 1 (Python index starts at 0)
+row = A[0, :]
+
+# Column 3 af B would be 2 (Python index starts at 0)
+col = B[:, 3]
+
+# Dot product
+entry_23 = np.dot(row, col)
+print("The dot product of the rows are:",entry_23)

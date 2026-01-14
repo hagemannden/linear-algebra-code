@@ -1,8 +1,8 @@
 import numpy as np
 
 # Define two vectors
-u = np.array( [3, -2, 5])
-v = np.array([1, 4, -2])
+u = np.array( [5, 7, 1])
+v = np.array([2, -1, 3])
 
 # Compute the dot product
 dot_product = np.dot(u, v)
@@ -49,6 +49,18 @@ else:
 	print("Angle between u and v: undefined (zero vector involved)")
 print("Classification:", classify_by_dot(dot_product))
 print("Orthogonal (perpendicular)?:", is_orthogonal(dot_product))
+
+# Projections (using standard dot-product formulas)
+u_dot_u = np.dot(u, u)
+v_dot_v = np.dot(v, v)
+
+# projection of v onto u: (v·u / ||u||^2) u  (same as (u·v / ||u||^2) u)
+proj_v_on_u = (dot_product / u_dot_u) * u
+# projection of u onto v: (u·v / ||v||^2) v
+proj_u_on_v = (dot_product / v_dot_v) * v
+
+print("\nProjection of v onto u ( (v·u / ||u||^2) u ):", proj_v_on_u)
+print("Projection of u onto v ( (u·v / ||v||^2) v ):", proj_u_on_v)
 
 # Key properties demonstration
 print("-" * 50)
